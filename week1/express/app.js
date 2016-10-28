@@ -1,0 +1,12 @@
+var express = require('express'),
+	app = express();
+app.get('/', function(req, res){
+	res.send('hello world !!');
+})
+app.use(functin(req, res){
+	res.sendStatus(404);
+})
+var server =app.listen(3000, function()){
+	var port =server.address().port;
+	console.log('Express server', port);
+}

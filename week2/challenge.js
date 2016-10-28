@@ -11,3 +11,4 @@ db.movieDetails.updateOne({ $or : [ { "awards.wins": { $gt: 0}},
 db.movieDetails.find({"imdb.votes": {$gt: 10000}, year: {$gte: 2010, $lte: 2013}})
 
 db.movieDetails.find({"imdb.votes": {$gt: 10000}, year: {$gte: 2010, $lte: 2013}, "tomato.consensus": null}).pretty().count()
+db.movieDetails.updateMany({"imdb.votes": {$gt: 10000}, year: {$gte: 2010, $lte: 2013}, "tomato.consensus": null}, $unset{"tomato.consensus": ""}})
