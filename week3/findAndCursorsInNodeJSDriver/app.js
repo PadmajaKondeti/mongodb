@@ -10,13 +10,17 @@ MongoClient.connect('mongodb://localhost:27017/crunchbase', function(err, db) {
     var query = {"category_code": "biotech"};
 
     db.collection('companies').find(query).toArray(function(err, docs) {
-
+console.log("############# Array #############", docs)
+            
         assert.equal(err, null);
         assert.notEqual(docs.length, 0);
         
-        docs.forEach(function(doc) {
-            console.log( doc.name + " is a " + doc.category_code + " company." );
-        });
+        // docs.forEach(function(doc) {
+        //     console.log( doc.name + " is a " + doc.category_code + " company." );
+           
+        // });
+                     console.log("############# Array end #############")
+ 
         
         db.close();
         
